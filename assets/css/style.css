@@ -1,0 +1,144 @@
+:root{
+    --color:white;
+    --pri-color:rgb(229,9,20);
+    --pri-hover-color:rgb(141, 5, 5);
+    --sec-color:black;
+    --sec-hover-color:rgb(33, 32, 32);
+}
+
+body {
+    position: relative;
+}
+
+body::after {
+    content: '';
+    background-image: linear-gradient(360deg,
+            rgba(0, 0, 0, 0.8500) 3.000%,
+            rgba(0, 0, 0, 0.8465) 11.08%,
+            rgba(0, 0, 0, 0.8361) 19.17%,
+            rgba(0, 0, 0, 0.8187) 27.25%,
+            rgba(0, 0, 0, 0.7944) 35.33%,
+            rgba(0, 0, 0, 0.7632) 43.42%,
+            rgba(0, 0, 0, 0.7250) 51.50%,
+            rgba(0, 0, 0, 0.6868) 59.58%,
+            rgba(0, 0, 0, 0.6556) 67.67%,
+            rgba(0, 0, 0, 0.6313) 75.75%,
+            rgba(0, 0, 0, 0.6139) 83.83%,
+            rgba(0, 0, 0, 0.6035) 91.92%,
+            rgba(0, 0, 0, 0.6000) 100.0%),
+        url("https://assets.nflxext.com/ffe/siteui/vlv3/3e4bd046-85a3-40e1-842d-fa11cec84349/web/IN-en-20250818-TRIFECTA-perspective_4bd1b66d-bbb6-4bc6-ba8f-ecbba53a1278_medium.jpg");
+    background-position: center;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    filter: blur(2px);
+    z-index: -1;
+    background-attachment: fixed;
+}
+.col-md-6 .logo{
+    width: 200px;
+    height: 100%;
+    
+}
+a{
+    height: 100%;
+    width: 100%;
+}
+.backdrop{
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top:0;
+    left:0;
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+    animation: fadeIn 0.5s linear;
+    display: none;
+}
+.movieModal{
+    position: fixed;
+    top:15%;
+    width: 50%;
+    left: 25%;
+    padding: 10px;
+    animation: dropDown 0.5s linear;
+    display: none;
+    z-index: 11;
+}
+.backdrop.active, .movieModal.active{
+    display: block;
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+@keyframes dropDown {
+    0%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.container-fluid .card{
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+.col-md-10 h4{
+    height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.card-body .content{
+    position: relative;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+.content img{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+.card-body .content p{
+    position: absolute;
+    height: 70%;
+    overflow-y: auto;
+    top:30%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: translateY(120%);
+    transition: all 0.5s linear;
+}
+.card-body .content:hover  p{
+    transform: translateY(0);
+}
+.nfx-pri-btn{
+    background-color: var(--pri-color);
+    color:var(--color);
+    transition: all 0.5s linear;
+}
+.nfx-pri-btn:hover{
+    background-color: var(--pri-hover-color);
+    color: var(--color);
+}
+.nfx-sec-btn{
+    background-color: var(--sec-color);
+    color:var(--color);
+    transition: all 0.5s linear;
+}
+.nfx-sec-btn:hover{
+    background-color: var(--sec-hover-color);
+    color: var(--color);
+}
